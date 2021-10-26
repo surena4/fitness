@@ -1,0 +1,1196 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Roboto", sans-serif;
+    scroll-behavior: smooth;
+}
+button{ 
+    font-size: .9rem;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    margin-top: 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    transition: .3s;
+    transition-property: border, background-color, color;
+    letter-spacing: 1px;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #222831;
+    border: 1px solid #222831;
+}
+p{
+    font-weight: 300;
+}
+.title{
+    width: 70%;
+    margin: 0 auto 70px;
+}
+.title h1{
+    font-size: 1.5rem;
+    line-height: 3;
+    text-transform: uppercase;
+}
+.title p{
+    color: #848484;
+    font-size: 1.3rem;
+}
+h3{
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #848484;
+}
+h2{
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.5;
+}
+::selection{
+    color: #fff;
+    background-color: #4CB648;
+}
+
+/* nav */
+
+#nav{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    padding: 30px 150px 0;
+    justify-content: space-between;
+    align-items: center;
+}
+#nav input[type="checkbox"]{
+    display: none;
+}
+#nav .logo{
+    position: relative;
+    color: #fff;
+    font-size: 2.4rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: -2;
+}
+#nav .logo span{
+    font-weight: 900;
+}
+#nav .logo::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 10px;
+    height: 10px;
+    background-color: #4CB648;
+}
+#nav .toggle{
+    display: none;
+    color: white;
+    font-size: 2.5rem;
+    transition: .3s transform;
+}
+#nav .toggle:hover{
+    transform: scale(1.1);
+}
+#nav ul{
+    display: flex;
+}
+#nav ul li{
+    margin-left: 30px;
+}
+#nav ul li a{
+    font-size: 1.1rem;
+    color: #ccc;
+    font-weight: 300;
+    transition: .3s color;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: .3s color;
+}
+#nav ul li:nth-child(2) a .fa{
+    font-size: .8rem;
+    margin-left: 5px;
+}
+#nav ul li a.active{
+    color: #fff;
+}
+#nav ul li a:hover{
+    color: #fff;
+}
+#nav .sub-menu{
+    position: relative;
+}
+#nav .sub-menu .sub{
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    display: none;
+    transition: .3s;
+}
+#nav .sub-menu .sub li{
+    width: 200px;
+    padding: 10px 0;
+}
+#nav .sub-menu1{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+#nav .sub-menu1 .fa{
+    color: #ccc;
+    margin-right: 20px;
+    margin-top: 5px;
+    font-size: .8rem;
+}
+#nav .sub-menu1:hover .fa{
+    color: #fff;
+}
+#nav .sub-menu1 .sub1{
+    position: absolute;
+    left: 85%;
+    display: none;
+    top: 50%;
+    display: none;
+    transition: .3s;   
+}
+
+#nav .sub-menu:hover .sub,
+#nav .sub-menu1:hover .sub1{
+    display: block;
+}
+
+/* hero */
+
+#hero{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), 
+    url("./img/hero.jpg") center/cover;
+    padding: 50px 150px;
+    display: flex;
+    align-items: center;
+}
+#hero .text-hero h1{
+    font-size: 4rem;
+    font-weight: 300;
+    color: white;
+}
+#hero .text-hero h1 span{
+    font-weight: 500;
+}
+#hero .text-hero button{
+    border-radius: 40px;
+    background-color: #4CB648;
+    border: none;
+}
+#hero .text-hero button:hover{
+    background-color: #222831;
+}
+
+/* Schedule */
+
+#schedule{
+    width: 100%;
+    height: 95vh;
+    padding: 15vh 150px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.04);
+}
+#schedule .plan-contact{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+#schedule .plan-contact .item{
+    width: 250px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    transition: .3s box-shadow;
+    margin: 20px;
+}
+#schedule .plan-contact .item:hover{
+    box-shadow: 0px 0px 60px -20px rgba(0, 0, 0, .5);
+}
+#schedule .plan-contact .item img{
+    width: 40px;
+    margin-bottom: 20px;
+}
+#schedule .planing{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#schedule .plan{
+    position: absolute;
+    visibility: hidden;
+    margin-top: 20px;
+    height: 0;
+}
+#schedule input[type="radio"]{
+    display: none;
+}
+#schedule label{
+    color: #848484;
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+#schedule .label .day{
+    margin: 0 10px;
+}
+#schedule #plan1:checked ~ .p1,
+#schedule #plan2:checked ~ .p2,
+#schedule #plan3:checked ~ .p3,
+#schedule #plan4:checked ~ .p4,
+#schedule #plan5:checked ~ .p5,
+#schedule #plan6:checked ~ .p6,
+#schedule #plan7:checked ~ .p7{
+    visibility: visible;
+}
+#schedule #plan1:checked ~ .day1,
+#schedule #plan2:checked ~ .day2,
+#schedule #plan3:checked ~ .day3,
+#schedule #plan4:checked ~ .day4,
+#schedule #plan5:checked ~ .day5,
+#schedule #plan6:checked ~ .day6,
+#schedule #plan7:checked ~ .day7{
+    background-color: #4CB648;
+    color: #fff;
+}
+
+/* banner */
+
+#banner{
+    width: 100%;
+    padding: 20vh;                                                                                                                      
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), 
+                        url("./img/banner.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+#banner h1{
+    font-size: 6rem;
+    color: #fff;
+    font-weight: 300;
+}
+
+/* Programing */
+
+#programing{
+    width: 100%;
+    text-align: center;
+    padding: 15vh 150px;
+}
+#programing .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#programing .content{
+    width: 30%;
+    margin-top: 70px;
+}
+#programing .content img{
+    width: 60px;
+}
+#programing .content h2{
+    line-height: 3;
+}
+#programing .content p{
+    font-size: 1.3rem;
+}
+#programing button{
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #000;
+}
+#programing button:hover{
+    color: #fff;
+}
+
+/* Trainers */
+
+#trainers{
+    width: 100%;
+    text-align: center;
+    padding: 15vh 150px;
+    background-color: rgba(0, 0, 0, 0.04);
+}
+#trainers .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#trainers .content{
+    width: calc(33.3333333% - 20px);
+    background-position: center;
+    background-size: cover;
+    margin: 10px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    cursor: pointer;
+}
+#trainers .content1{
+    background-image: url("./img/Trainers/Trainers1.jpg");
+}
+#trainers .content2{
+    background-image: url("./img/Trainers/Trainers2.jpg");
+}
+#trainers .content3{
+    background-image: url("./img/Trainers/Trainers3.jpg");
+}
+#trainers .content4{
+    background-image: url("./img/Trainers/Trainers4.jpg");
+}
+#trainers .content5{
+    background-image: url("./img/Trainers/Trainers5.jpg");
+}
+#trainers .content6{
+    background-image: url("./img/Trainers/Trainers6.jpg");
+}
+#trainers .content .info{
+    background-color: rgba(0, 0, 0, .6);
+    padding: 100px 20px;
+    transform: translateY(500px);
+    visibility: hidden;
+    transition: 1s;
+    transition-property: transform, visibility;
+    cursor: default;
+}
+#trainers .content:hover .info{
+    transform: translateY(0);
+    visibility: visible;
+}
+#trainers .content .info h2{
+    color: #fff;
+    line-height: 2;
+    font-size: 1.7rem;
+}
+#trainers .content .info h3{
+    color: #fff;
+    line-height: 2;
+    margin-bottom: 30px;
+}
+#trainers .content .info p{
+    color: #ccc;
+    font-size: 1.4rem;
+}
+#trainers .content .social{
+    margin-top: 30px;
+}
+#trainers .content .social .fa{
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: .3s;
+    transition-property: color, background-color;
+}
+#trainers .social .fa:hover{
+    color: #fff;
+    background-color: rgb(0, 0, 0, .5);
+}
+
+/* Classes */
+
+#classes{
+    width: 100%;
+    height: 60vh;
+    background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), 
+                        url("./img/Classes.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    padding: 0 130px;
+}
+#classes .container{
+    width: 500px;
+    height: 100%;
+    background-color: #222831;
+    padding: 50px 20px;
+}
+#classes .container h1{
+    font-size: 7.5vh;
+    font-weight: 300;
+    color: #fff;
+}
+#classes .container p{
+    color: #ccc;
+    line-height: 3;
+    font-size: 1.3rem;
+}
+#classes .container button{
+    background-color: #4CB648;
+    border: none;
+    transition: .3s background-color;
+}
+#classes .container button:hover{
+    background-color: #535353;
+}
+
+/* Pricing Plan */
+
+#pricing{
+    width: 100%;
+    text-align: center;
+    padding: 15vh 150px;
+    background-color: rgba(0, 0, 0, 0.04);
+}
+#pricing .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#pricing .content{
+    width: 23%;
+    background-color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+}
+#pricing .content h4{
+    color: #888f94;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+#pricing .content h1{
+    color: #6d6d6d;
+    font-size: 5rem;
+    font-weight: 300;
+}
+#pricing .content h1::after{
+    content: "$";
+    font-size: 2rem;
+    font-weight: 100;
+}
+#pricing .content h3{
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+#pricing .content p{
+    color: #848484;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+#pricing .content ul{
+    color: #848484;
+    display: block;
+}
+#pricing .content ul li{
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+#pricing .content button{
+    color: #333;
+}
+#pricing .content button:hover{
+    color: #fff;
+}
+#pricing .content ul li:nth-child(even){
+    background-color: rgba(0, 0, 0, 0.04);
+}
+#pricing .content button.ctn3{
+    background-color: #4CB648;
+    border: none;
+}
+#pricing .content button.ctn3:hover{
+    background-color: #222831;
+}
+#pricing .content h5{
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+/* Blog */
+
+#blog{
+    width: 100%;
+    padding: 15vh 150px;
+}
+.title-blog{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#blog .blog-left,
+#blog .blog-right{
+    width: 48%;
+}
+#blog .container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#blog .content{
+    width: 100%;
+    display: flex;
+    margin-top: 50px;
+}
+#blog .content button{
+    padding: 10px 15px;
+    color: rgba(0, 0, 0, 0.7);
+}
+#blog .content button:hover{
+    color: #fff;
+}
+#blog .content .left{
+    padding-right:20px;
+}
+#blog .content .left img{
+    width: 200px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#blog .content .right a{
+    color: #000;
+}
+#blog .content .right h1{
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.7);
+    transition: .3s color;
+}
+#blog .content .right h1:hover{
+    color: #4CB648;
+}
+#blog .content .right p:nth-child(2){
+    color: #888f94;
+    margin-bottom: 20px;
+}
+#blog .content .right p:nth-child(2) span{
+    margin-left: 15px;
+    color: #4CB648;
+}
+#blog .content .right p:nth-child(2) span .fa{
+    margin-left: 3px;
+    font-weight: 700;
+}
+#blog .content .right p:nth-child(3){
+    color: #6d6d6d;
+    font-size: 1.3rem;
+}
+#blog .content .sub-left{
+    background-color: #4CB648;
+    padding: 10px 20px;
+    text-align: center;
+}
+#blog .content .sub-left p{
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 900;
+}
+#blog .content .sub-left h5{
+    color: #eee;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Footer */
+
+#footer{
+    width: 100%;
+    padding: 5vh 150px 0;
+    background-color: #222831;
+}
+#footer .container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 10vh;
+    border-bottom: 1px solid #535353;
+}
+#footer .content{
+    width: 30%;
+}
+#footer h1{
+    color: #ccc;
+    margin-bottom: 30px;
+}
+#footer p{
+    color: #888f94;
+    font-size: 1.3rem;
+    display: block;
+    line-height: 1.5;
+}
+#footer a{
+    display: block;
+    color: #aaa;
+    font-size: 1.3rem;
+    transition: .3s color;
+}
+#footer a:hover{
+    color: #4CB648;
+}
+#footer .fa{
+    color: #aaa;
+    margin-right: 10px;
+    font-size: 2rem;
+}
+#footer .content .sub{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#footer .content .sub .fa{
+    margin-right: 20px;
+}
+#footer .content input,
+#footer .content textarea{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, .2);
+    border: none;
+    outline: none;
+    resize: none;
+    border-radius: 5px;
+}
+#footer .content input::placeholder,
+#footer .content textarea::placeholder{
+    font-size: 1rem;
+}
+#footer .content input:focus,
+#footer .content textarea:focus{
+    background-color: #ccc;
+}
+#footer button{
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #4CB648;
+    border: none;
+    cursor: pointer;
+}
+
+/* Copyright */
+
+#copyright{
+    background-color: #222831;
+    text-align: center;
+    padding: 50px 0;
+}
+#copyright .fa{
+    font-size: 1.7rem;
+    color: #888f94;
+    transition: .3s color;
+    margin-bottom: 30px;
+    cursor: pointer;
+    padding: 10px;
+}
+#copyright .fa:hover{
+    color: #4CB648;
+}
+#copyright p{
+    color: #848484;
+    font-weight: 100;
+    line-height: 1.5;
+}
+
+/* Up */
+
+#up{
+    position: fixed;
+    right: 70px;
+    bottom: 50px;
+}
+#up .fa{
+    color: #222831;
+    font-size: 1.3rem;
+    background-color: #4cb64860;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queri */
+
+@media screen and (max-width: 1300px){
+    #nav{
+        padding: 30px 100px 0;
+    }
+    #hero, #schedule, 
+    #banner, #programing,
+    #trainers, #pricing,
+    #blog{
+        padding: 15vh 100px;
+    }
+    #classes{
+        padding: 0 150px
+    }
+    #footer{
+        padding: 5vh 100px 0;
+    }
+}
+
+
+@media screen and (max-width: 1170px){
+    #nav{
+        padding: 30px 50px 0;
+    }
+    #hero .text-hero h1{
+        font-size: 3rem;
+    }
+    #hero, #schedule, 
+    #programing,
+    #trainers, #pricing,
+    #blog{
+        padding: 15vh 50px;
+    }
+    #banner{
+        padding: 20vh 50px;
+    }
+    #banner h1{
+        font-size: 4rem;
+    }
+    #classes{
+        padding: 0 100px
+    }
+    #footer{
+        padding: 5vh 50px 0;
+    }
+    #schedule .plan-contact .item{
+        margin: 20px 5px;
+    }
+    #schedule label{
+        margin: 0;
+    }
+
+}
+
+
+@media screen and (max-width: 1050px){
+    #schedule .plan-contact .item{
+        width: 200px;
+        padding: 30px 10px;
+    }
+    #schedule label{
+        font-size: .8rem;
+    }
+}
+
+
+
+@media screen and (max-width: 991px){
+    #programing .container{
+        justify-content: space-around;
+    }
+    #programing .content{
+        width: 40%;
+    }
+    #trainers .container{
+        justify-content: space-around;
+    }
+    #trainers .content{
+        width: 40%;
+    }
+    #pricing .container{
+        justify-content: space-around;
+    }
+    #pricing .content{
+        width: 40%;
+        margin-bottom: 30px;
+    }
+    #blog .container{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    #blog .blog-left,
+    #blog .blog-right{
+        width: 80%;
+        margin-bottom: 70px;
+    }
+}
+
+
+@media screen and (max-width: 850px){
+    #nav .toggle{
+        position: absolute;
+        top: 33px;
+        right: 50px;
+        z-index: 1;
+        display: block;
+    }
+    #nav .menu-bar{
+        background-color: #4CB648;
+        min-width: 320px;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 100px 0;
+        transform: translateX(320px);
+        transition: .5s transform;
+        display: none;
+    }
+    #nav .menu-bar ul{
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    #nav .menu-bar ul li{
+        margin-left: 15px;
+        margin-bottom: 10px;
+    }
+    #nav .sub-menu .sub li{
+        width: 200px;
+        padding: 0;
+    }
+    #nav .menu-bar .sub{
+        position: unset;
+    }
+    #nav .menu-bar .sub1{
+        /* position: unset; */
+    }
+    #nav .menu-bar .sub1 > li{
+        width: 30px;
+    }
+    #nav #menu:checked ~ .menu-bar{
+        transform: translateX(0);
+        display: block;
+    }
+    #schedule .plan-contact{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    #schedule .plan-contact .item{
+        width: 300px;
+        margin: 10px;
+    }
+    #schedule{
+        height: 130vh;
+    }
+    #schedule label{
+        font-size: 1rem;
+        margin: 0 20px;
+    }
+    #schedule .plan-contact{
+        margin-top: 70px;
+    }
+    #trainers .container{
+        justify-content: space-between;
+    }
+    #trainers .content{
+        width: 48%;
+        margin: 10px 0;
+    }
+    #classes .container p{
+        font-size: 1rem;
+    }
+    #classes .container{
+        width: 50%;
+    }
+    #classes .container h1{
+        font-size: 6vw;
+    }
+    #banner h1{
+        font-size: 3rem;
+        font-weight: 500;
+    }
+    #pricing .content{
+        width: 48%;
+    }
+    #footer .content{
+        width: 48%;
+    }
+    #up{
+        position: fixed;
+        right: 50px;
+        bottom: 30px;
+    }
+}
+
+
+
+@media screen and (max-width: 757px){
+    #hero .text-hero h1{
+        font-size: 2.5rem;
+    }
+    #hero .text-hero button{
+        font-size: .8rem;
+    }
+    #hero, #schedule, #programing, 
+    #trainers, #pricing, #blog {
+        padding: 5vh 50px;
+    }
+    #schedule .plan-contact .item{
+        width: 70%;
+    }
+    #schedule{
+        height: 185vh;
+    }
+    #programing .content{
+        width: 70%;
+    }
+    #trainers .content{
+        width: 70%;
+    }
+    #trainers .container {
+        justify-content: center;
+    }
+}
+
+
+@media screen and (max-width: 690px){
+    #schedule label {
+        font-size: .9rem;
+        margin: 0 10px;
+    }
+    #classes .container {
+        width: 60%;
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #classes{
+        padding-left: 50px;
+    }
+    #blog .content .left{
+        padding-right: 10px;
+    }
+    #blog .content1,
+    #blog .content3{
+        flex-direction: column;
+    }
+    #blog .content .left img{
+        width: 80%;
+    }
+    #blog .content .left{
+        margin-bottom: 20px;
+    }
+}
+
+
+@media screen and (max-width: 586px){
+    #schedule label {
+        font-size: .9rem;
+        margin: 0;
+    }
+    #schedule .plan-contact .item {
+        width: 80%;
+    }
+    #banner h1 {
+        font-size: 2.5rem;
+    }
+    #programing .content {
+        width: 80%;
+    }
+    #trainers .content {
+        width: 80%;
+    }
+    #schedule{
+        height: 190vh;
+    }
+    #classes .container h1 {
+        font-size: 7vw;
+    }
+    #pricing .content{
+        width: 80%;
+    }
+    #blog .blog-left, #blog .blog-right{
+        width: 90%;
+    }    
+    #footer .content {
+        width: 80%;
+        margin-top: 30px;
+    }
+    p{
+        font-size: 1.2rem !important;
+    }
+    #up{
+        position: fixed;
+        right: 30px;
+        bottom: 30px;
+    }
+    #up .fa {
+        padding: 10px;
+    }
+}
+
+
+
+
+@media screen and (max-width: 505px){
+    #schedule label {
+        font-size: .8rem;
+        padding: 7px 10px;
+    }
+    #hero, #schedule, #programing, 
+    #trainers, #pricing, #blog {
+        padding: 5vh 20px;
+    }
+    #nav{
+        padding: 20px 30px;
+    }
+    #nav .fa {
+        display: block;
+        right: 30px;
+        top: 20px;
+    }
+    #schedule{
+        height: 200vh;
+    }
+    #footer a{
+        font-size: 1.1rem;
+    }
+    #footer .fa{
+        font-size: 1.5rem;
+    }
+    #copyright .fa{
+        font-size: 1.3rem;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    p{
+        font-size: 1rem !important;
+    }
+    button{
+        font-size: .8rem;
+        padding: 10px 15px;
+    }
+    #pricing .content ul li{
+        font-size: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 411px){
+    h1{
+        font-size: 1.2rem !important;
+    }
+    #hero .text-hero h1 {
+        font-size: 2rem !important;
+    }
+    #banner h1 {
+        font-size: 1.5rem !important;
+    }
+    h2{
+        font-size: 1.1rem;
+    }
+    p{
+        font-size: .9rem !important;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    .title{
+        margin-bottom: 40px;
+    }
+    #nav .logo{
+        font-size: 2rem;
+    }
+    #nav .fa{
+        font-size: 2rem;
+        top: 22px;
+    }
+    #hero .text-hero h1{
+        font-size: 2rem;
+    }
+    #banner h1{
+        font-size: 2rem;
+    }
+    #pricing .content h1{
+        font-size: 4.3rem !important;
+    }
+    #schedule .plan-contact .item {
+        width: 100%;
+    }
+    #programing .content {
+        width: 100%;
+    }
+    #trainers .content {
+        width: 100%;
+    }
+    #classes .container {
+        width: 75%;
+    }
+    #classes .container button{
+        font-size: .7rem;
+    }
+    #classes .container h1 {
+        font-size: 7vw !important;
+    }
+    #pricing .content{
+        width: 100%;
+    }
+    #footer .content {
+        width: 100%;
+    }
+    #up{
+        position: fixed;
+        right: 30px;
+        bottom: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
